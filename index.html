@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <h1>Student Form</h1>
+
+        <input id="n" placeholder="Name">
+        <input id="e" placeholder="Email">
+        <input id="c" placeholder="Course">
+        <button onclick="send()">Submit</button>
+
+        <script>
+            function send(){
+                fetch("https://script.google.com/macros/s/AKfycbyDNnDes_qHGjcQYPVhBj3EHxrxABU3OiSjc0WkaLL3m8uB4PIULdcnBWWhwGCRoqUUSA/exec",{
+                    method:"POST",
+                    body:new URLSearchParams({
+                    name:document.getElementById("n").value,
+                    email:document.getElementById("e").value,
+                    course:document.getElementById("c").value,
+                    })
+                });
+            }
+        </script>
+    </body>
+</html>
